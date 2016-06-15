@@ -56,6 +56,13 @@ BOARD_CACHEIMAGE_PARTITION_SIZE := 268435456
 BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_FLASH_BLOCK_SIZE := 4096
 
+# Build Kernel inline
+KERNEL_TOOLCHAIN_PREFIX := aarch64-linux-android-
+TARGET_KERNEL_SOURCE := kernel/htc/flounder
+TARGET_KERNEL_CONFIG := type-1a_flouner_defconfig
+BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
+BOARD_KERNEL_CMDLINE := androidboot.selinux=enforcing
+
 BOARD_CHARGER_DISABLE_INIT_BLANK := true
 BOARD_USES_GENERIC_INVENSENSE := false
 
@@ -126,5 +133,17 @@ BOARD_CHARGER_ENABLE_SUSPEND := true
 
 MALLOC_IMPL := dlmalloc
 
+# Enable vendor image symlink
+BOARD_NEEDS_VENDORIMAGE_SYMLINK := true
+
 # Use the non-open-source parts, if they're present
 -include vendor/htc/flounder/BoardConfigVendor.mk
+
+# TWRP
+TW_THEME := portrait_hdpi
+TW_INCLUDE_CRYPTO := true
+TW_INCLUDE_NTFS_3G := true
+BOARD_HAS_NO_REAL_SDCARD := true
+BOARD_SUPPRESS_SECURE_ERASE := true
+TARGET_RECOVERY_DEVICE_MODULES := libc++ libkeymaster_messages
+TW_RECOVERY_ADDITIONAL_RELINK_FILES := $(OUT)/system/lib64/libc++.so $(OUT)/system/lib64/libkeymaster_messages.so
