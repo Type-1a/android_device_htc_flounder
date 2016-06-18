@@ -36,7 +36,7 @@ $(call inherit-product, device/htc/flounder/product.mk)
 $(call inherit-product, device/htc/flounder/device-lte.mk)
 $(call inherit-product-if-exists, vendor/htc/flounder_lte/device-vendor.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base.mk)
-$(call inherit-product, vendor/type-1a/config/common_tablet.mk)
+$(call inherit-product, vendor/type1a/config/common_tablet.mk)
 
 PRODUCT_NAME := type1a_flounder
 PRODUCT_DEVICE := flounder
