@@ -142,8 +142,9 @@ BOARD_NEEDS_VENDORIMAGE_SYMLINK := true
 # TWRP
 TW_THEME := portrait_hdpi
 TW_INCLUDE_CRYPTO := true
-TW_INCLUDE_NTFS_3G := true
+# TW_INCLUDE_NTFS_3G := true
+RECOVERY_SDCARD_ON_DATA := true
 BOARD_HAS_NO_REAL_SDCARD := true
 BOARD_SUPPRESS_SECURE_ERASE := true
-TARGET_RECOVERY_DEVICE_MODULES := libc++ libkeymaster_messages
-TW_RECOVERY_ADDITIONAL_RELINK_FILES := $(OUT)/system/lib64/libc++.so $(OUT)/system/lib64/libkeymaster_messages.so
+# TARGET_RECOVERY_DEVICE_MODULES := libc++ libkeymaster_messages
+# TW_RECOVERY_ADDITIONAL_RELINK_FILES := $(OUT)/system/lib64/libc++.so $(OUT)/system/lib64/libkeymaster_messages.so

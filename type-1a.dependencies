@@ -1,0 +1,8 @@
+[
+  {
+    "remote":       "type-1a",
+    "repository":   "android_kernel_htc_flounder",
+    "target_path":  "kernel/htc/flounder",
+    "revision":     "android-6.0"
+  }
+]
